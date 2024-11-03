@@ -2,10 +2,9 @@ version: "3.8"
 
 services:
   api:
-    build: .
+    image: ${DOCKER_USERNAME}/taskmanager:latest
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     volumes:
-      - ./app:/app/app
-      - ./data:/app/data # Updated volume mount
-    user: "1000:1000" # This ensures proper permissions
+      - ./data:/app/data
+    user: "1000:1000"
